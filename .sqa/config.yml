@@ -1,0 +1,58 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.0
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/spacetelescope/PyFITS:
+      branch: master
+      repo: https://github.com/spacetelescope/PyFITS
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/spacetelescope/PyFITS git:
+        commands:
+        - /usr/bin/env sh .sqa/script.lousy-buff-bison.sh
+        container: qc.acc_lanky-firebrick-gar
+  QC.Doc:
+    repos:
+      github.com/spacetelescope/PyFITS find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-viridian-bracke.sh
+        container: qc.doc_zippy-bronze-dormouse
+      github.com/spacetelescope/PyFITS git:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleazy-puce-binturong.sh
+        container: qc.doc_breezy-tomato-cassowary
+      github.com/spacetelescope/PyFITS restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.messy-razzmatazz-tamarin.sh
+        container: qc.doc_shaky-gamboge-lynx
+  QC.Lic:
+    repos:
+      github.com/spacetelescope/PyFITS licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-sapphire-goose.sh
+        container: qc.lic_nerdy-malachite-angora
+  QC.Sec:
+    repos:
+      github.com/spacetelescope/PyFITS bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.leaky-bistre-dachshund.sh
+        container: qc.sec_whiny-purple-quoll
+  QC.Sty:
+    repos:
+      github.com/spacetelescope/PyFITS flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-lemon-dollar.sh
+        container: qc.sty_boozy-asparagus-hound
+  QC.Ver:
+    repos:
+      github.com/spacetelescope/PyFITS get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.silly-pink-butterfly.sh
+        container: qc.ver_messy-chartreuse-harrier
+timeout: 5400

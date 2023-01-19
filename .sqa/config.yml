@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.0
+      branch: release/1.7.7
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/spacetelescope/PyFITS:
       branch: master
@@ -15,44 +15,44 @@ sqa_criteria:
     repos:
       github.com/spacetelescope/PyFITS git:
         commands:
-        - /usr/bin/env sh .sqa/script.lousy-buff-bison.sh
-        container: qc.acc_lanky-firebrick-gar
+        - /usr/bin/env sh .sqa/script.stealthy-sepia-fish.sh
+        container: qc.acc_shaky-persimmon-cheetah
   QC.Doc:
     repos:
       github.com/spacetelescope/PyFITS find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.chewy-viridian-bracke.sh
-        container: qc.doc_zippy-bronze-dormouse
+        - /usr/bin/env sh .sqa/script.homey-lemon-dhole.sh
+        container: qc.doc_squeaky-bistre-squirt
       github.com/spacetelescope/PyFITS git:
         commands:
-        - /usr/bin/env sh .sqa/script.sleazy-puce-binturong.sh
-        container: qc.doc_breezy-tomato-cassowary
+        - /usr/bin/env sh .sqa/script.lovely-pear-sheepdog.sh
+        container: qc.doc_cloudy-goldenrod-manatee
       github.com/spacetelescope/PyFITS restructuredtext-lint:
         commands:
-        - /usr/bin/env sh .sqa/script.messy-razzmatazz-tamarin.sh
-        container: qc.doc_shaky-gamboge-lynx
+        - /usr/bin/env sh .sqa/script.hilly-magnolia-abyssinian.sh
+        container: qc.doc_sleazy-coral-frise
   QC.Lic:
     repos:
       github.com/spacetelescope/PyFITS licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-sapphire-goose.sh
-        container: qc.lic_nerdy-malachite-angora
+        - /usr/bin/env sh .sqa/script.nerdy-taupe-booby.sh
+        container: qc.lic_nerdy-eggplant-forest
   QC.Sec:
     repos:
       github.com/spacetelescope/PyFITS bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.leaky-bistre-dachshund.sh
-        container: qc.sec_whiny-purple-quoll
+        - /usr/bin/env sh .sqa/script.paltry-taupe-heron.sh
+        container: qc.sec_shaggy-taupe-bloodhound
   QC.Sty:
     repos:
       github.com/spacetelescope/PyFITS flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-lemon-dollar.sh
-        container: qc.sty_boozy-asparagus-hound
+        - /usr/bin/env sh .sqa/script.wimpy-carmine-koala.sh
+        container: qc.sty_pretty-platinum-avocet
   QC.Ver:
     repos:
       github.com/spacetelescope/PyFITS get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.silly-pink-butterfly.sh
-        container: qc.ver_messy-chartreuse-harrier
+        - /usr/bin/env sh .sqa/script.sunny-wheat-spider.sh
+        container: qc.ver_blurry-ochre-discus
 timeout: 5400
